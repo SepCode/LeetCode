@@ -41,7 +41,6 @@
 		A20A4592224B1939005D9124 /* LeetCodeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeetCodeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20A4596224B1939005D9124 /* LeetCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeetCodeTests.m; sourceTree = "<group>"; };
 		A20A4598224B1939005D9124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A20A45A1224B60B7005D9124 /* LeetCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LeetCode.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A20A45CE224C5C47005D9124 /* LeetCodeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeetCodeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A20A45CF224C5C49005D9124 /* LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +102,6 @@
 			children = (
 				A20A4596224B1939005D9124 /* LeetCodeTests.m */,
 				A20A45CF224C5C49005D9124 /* LeetCode.swift */,
-				A20A45A1224B60B7005D9124 /* LeetCode.playground */,
 				A20A4598224B1939005D9124 /* Info.plist */,
 				A20A45CE224C5C47005D9124 /* LeetCodeTests-Bridging-Header.h */,
 			);

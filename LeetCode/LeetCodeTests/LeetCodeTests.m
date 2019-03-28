@@ -34,6 +34,21 @@
     NSLog(@"--%ld",(long)result);
 }
 
+- (void)testPerformanceExample {
+    // This is an example of a performance test case.
+    [self measureBlock:^{
+        // Put the code you want to measure the time of here.
+    }];
+}
+
+
+
+
+
+
+
+
+
 - (void)testTowSum {
     
     NSMutableDictionary *map = [NSMutableDictionary new];
@@ -177,12 +192,109 @@ struct ListNode {
 }
 
 
+- (void)testCheckInclusion {
+    
+    
+    NSLog(@"--%d",checkInclusion("dd","rroddzkdktk"));
+    
+    
+}
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+bool checkInclusion(char* s1, char* s2) {
+    unsigned long count1 = strlen(s1);
+    unsigned long count2 = strlen(s2);
+    
+    if (count1 > count2) {
+        return false;
+    }
+    
+    int n1[26] = {0}, n2[26] = {0};
+    
+    for (int i = 0; i < count1; i++) {
+        n1[s1[i] - 'a']++;
+        n2[s2[i] - 'a']++;
+    }
+    
+    for (int i = 0; i < count2 - count1; i++) {
+        if (ccomp(n1,n2)) {
+            return true;
+        }
+        
+        n2[s2[i + count1] - 'a']++;
+        n2[s2[i] - 'a']--;
+        
+    }
+
+    return ccomp(n1,n2);
+}
+
+bool ccomp(int *n1, int *n2) {
+    for (int i = 0; i < 26; i++) {
+        if (n1[i] != n2[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+- (void)testMultiply {
+    
+    
+    
+    
+}
+
+/*
+ 
+ 
+  4 5 6
+  *   9
+  -----
+4 5 5
+  1 0 4
+--------
+4 6 5 4
+ 
+ */
+
+char* multiply(char* num1, char* num2) {
+    
+    int n1 = (int)strlen(num1);
+    int n2 = (int)strlen(num2);
+    
+    char *result = 0;
+    
+    char *result_sum = 0;
+    for (int i = n1 - 1; i >= 0; i--) {
+        //  被乘数
+        int m_i = num1[i] - '0';
+        int carry = 0;
+        char *result_i = 0;
+        for (int j = n2 - 1; j >= 0; j--) {
+            // 乘数
+            int m_j = num2[j] - '0';
+            
+            int mul = (m_i * m_j) + carry;
+            carry = mul / 10;
+            result_i[j] = carry % 10 + '0';
+        }
+        
+        if (carry >= 0) {
+            result_i[n2] = carry + '0';
+        }
+        
+        int sumlen = (int)strlen(result_sum);
+        for (int k = sumlen - 1 - i; k >= 0; k--) {
+            
+            
+            
+        }
+        
+    }
+    
+    
+    
+    return result;
 }
 
 @end
