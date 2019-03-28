@@ -237,64 +237,68 @@ bool ccomp(int *n1, int *n2) {
     return true;
 }
 
-- (void)testMultiply {
-    
-    
-    
-    
-}
-
 /*
  
  
-  4 5 6
-  *   9
-  -----
-4 5 5
-  1 0 4
---------
-4 6 5 4
+ 4 5 6
+ *   9
+ -----
+ 4 5 5
+ 1 0 4
+ --------
+ 4 6 5 4
  
  */
+- (void)testMultiply {
+    
+    
+    NSLog(@"%s", multiply("123", "456"));
+    
+}
+
 
 char* multiply(char* num1, char* num2) {
     
+    
     int n1 = (int)strlen(num1);
     int n2 = (int)strlen(num2);
+    if ((n1 == 1 && num1[0] == '0') || (n2 == 1 && num2[0] == '0')) {
+        return "0";
+    }
     
-    char *result = 0;
+    char result[220] = {};
+    for (int i = 0; i < n1 + n2; i++) {
+        result[i] = '0';
+    }
     
-    char *result_sum = 0;
     for (int i = n1 - 1; i >= 0; i--) {
         //  被乘数
         int m_i = num1[i] - '0';
-        int carry = 0;
-        char *result_i = 0;
+        int mulCarry = 0;
+        int addCarry = 0;
         for (int j = n2 - 1; j >= 0; j--) {
             // 乘数
             int m_j = num2[j] - '0';
             
-            int mul = (m_i * m_j) + carry;
-            carry = mul / 10;
-            result_i[j] = carry % 10 + '0';
+            int mul = (m_i * m_j) + mulCarry + addCarry;
+            mulCarry = mul / 10;
+            int temp = mul % 10;
+            
+            int addMul = result[i + j + 1] + temp - '0';
+            addCarry = addMul / 10;
+            result[i + j + 1] = addMul % 10 + '0';
+            
         }
         
-        if (carry >= 0) {
-            result_i[n2] = carry + '0';
-        }
-        
-        int sumlen = (int)strlen(result_sum);
-        for (int k = sumlen - 1 - i; k >= 0; k--) {
-            
-            
-            
-        }
+        result[i] += mulCarry + addCarry;
         
     }
+    char *temp = result;
+    if (result[0] == '0') {
+        temp++;
+    }
     
-    
-    
-    return result;
+    return temp;
 }
 
 @end
