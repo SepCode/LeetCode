@@ -45,10 +45,10 @@ class Solution1 {
             var j = 0
             
             while j < prefix.count && !stop {
-                if j > otherStr.count || prefix[j] != otherStr[j] {
+                if j >= otherStr.count || prefix[j] != otherStr[j] {
                     stop = true
                 }
-                if stop {
+                if !stop {
                     j = j + 1;
                 }
             }

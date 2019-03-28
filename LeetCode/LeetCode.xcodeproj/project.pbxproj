@@ -14,6 +14,7 @@
 		A20A458A224B1939005D9124 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A20A4588224B1939005D9124 /* LaunchScreen.storyboard */; };
 		A20A458D224B1939005D9124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A20A458C224B1939005D9124 /* main.m */; };
 		A20A4597224B1939005D9124 /* LeetCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A20A4596224B1939005D9124 /* LeetCodeTests.m */; };
+		A20A45D0224C5C49005D9124 /* LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A45CF224C5C49005D9124 /* LeetCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		A20A4596224B1939005D9124 /* LeetCodeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LeetCodeTests.m; sourceTree = "<group>"; };
 		A20A4598224B1939005D9124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20A45A1224B60B7005D9124 /* LeetCode.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = LeetCode.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A20A45CE224C5C47005D9124 /* LeetCodeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeetCodeTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		A20A45CF224C5C49005D9124 /* LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				A20A4596224B1939005D9124 /* LeetCodeTests.m */,
+				A20A45CF224C5C49005D9124 /* LeetCode.swift */,
 				A20A45A1224B60B7005D9124 /* LeetCode.playground */,
 				A20A4598224B1939005D9124 /* Info.plist */,
+				A20A45CE224C5C47005D9124 /* LeetCodeTests-Bridging-Header.h */,
 			);
 			path = LeetCodeTests;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 					};
 					A20A4591224B1939005D9124 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1000;
 						TestTargetID = A20A4579224B1938005D9124;
 					};
 				};
@@ -215,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20A45D0224C5C49005D9124 /* LeetCode.swift in Sources */,
 				A20A4597224B1939005D9124 /* LeetCodeTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +406,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3TXB8284A;
 				INFOPLIST_FILE = LeetCodeTests/Info.plist;
@@ -409,6 +417,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SepCode.LeetCodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeetCodeTests/LeetCodeTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetCode.app/LeetCode";
 			};
@@ -418,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X3TXB8284A;
 				INFOPLIST_FILE = LeetCodeTests/Info.plist;
@@ -428,6 +440,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SepCode.LeetCodeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LeetCodeTests/LeetCodeTests-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LeetCode.app/LeetCode";
 			};
