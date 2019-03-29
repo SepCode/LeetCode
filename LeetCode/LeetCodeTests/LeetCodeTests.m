@@ -266,7 +266,8 @@ char* multiply(char* num1, char* num2) {
         return "0";
     }
     
-    char result[220] = {};
+    char *result = malloc(n1 + n2);
+    memset(result, 0, n1 + n2);
     for (int i = 0; i < n1 + n2; i++) {
         result[i] = '0';
     }
@@ -293,12 +294,163 @@ char* multiply(char* num1, char* num2) {
         result[i] += mulCarry + addCarry;
         
     }
-    char *temp = result;
     if (result[0] == '0') {
-        temp++;
+        result++;
     }
     
-    return temp;
+    return result;
 }
+
+
+- (void)testReverseWords {
+    
+    printf("%s", reverseWords("a good   example"));
+}
+
+
+char* reverseWords(char* s) {
+    int len = (int)strlen(s);
+    char *result = malloc(len + 1);
+    memset(result, '0', len + 1);
+    char *p1 = s + len - 1;
+    char *p2 = p1;
+    for (int i = len - 1; i >= 0; i--) {
+        p1 = s + i;
+        bool equal = s[i] == ' ';
+        if (equal || i == 0) {
+            // 截取到新字符串
+            
+            if (equal) {
+                p1++;
+            }
+            
+            if (p1 <= p2) {
+                if (strlen(result) != 0) {
+                    strcat(result, " ");
+                }
+                strncat(result, p1, p2 - p1 + 1);
+            }
+            if (i != 0) {
+                p2 = s + i - 1;
+            }
+        }
+    }
+    
+    return result;
+}
+
+
+
+int remove_blank(char *s, int len) {
+    int i, cur;
+    int flag = 0;
+    for (i = 0; i < len; ++i) {
+        if (s[i] != ' ')
+            break;
+    }
+    
+    while (len > i) {
+        if (s[len - 1] == ' ') {
+            len--;
+        } else {
+            break;
+        }
+    }
+    
+    for (cur = 0; i < len; ) {
+        if (s[i] != ' ') {
+            *(s + cur) = *(s + i);
+            cur++;
+            i++;
+            flag = 0;
+        } else if (flag) {
+            i++;
+        } else {
+            *(s + cur) = *(s + i);
+            cur++;
+            i++;
+            flag = 1;
+        }
+    }
+    
+    *(s + cur) = '\0';
+    return cur;
+}
+
+void r(char *s, int len) {
+    int i = 0;
+    char c;
+    while (i < len - 1) {
+        c = *(s + i);
+        *(s + i) = *(s + len - 1);
+        *(s + len - 1) = c;
+        
+        i++;
+        len--;
+    }
+}
+
+void reverseWords1(char *s) {
+    if (s == NULL) {
+        return;
+    }
+    
+    int len = strlen(s);
+    len = remove_blank(s, len);
+    //    std::cout << s << std::endl;
+    int i, cur;
+    
+    for (i = 0, cur = i; i < len; i++) {
+        if (s[i] == ' ') {
+            r(s + cur, i - cur);
+            cur = i + 1;
+            i = cur;
+        }
+        
+        if (i == len - 1) {
+            r(s + cur, i - cur + 1);
+        }
+    }
+    
+    r(s, len);
+}
+
+char *reverseWords2(char *s) {
+    char *p = s;
+    int len = strlen(s);
+    char *sr = malloc(len*sizeof(char)+1);
+    if (sr == NULL) {
+        return NULL;
+    }
+    memset(sr, 0, len*sizeof(char)+1);
+    int i, end;
+    while(*p == ' ') {
+        p++;
+    }
+    //printf("the s len:%d, the *p:%c\n", len, *p);
+    for (end = len-1; end>=0; end--) {
+        if (s[end] == ' ') {
+            s[end] = '\0';
+        } else {
+            break;
+        }
+    }
+    //printf("the end:%d,s[end]:%c\n", end, s[end]);
+    for (i=end; i>= p-s; i--) {
+        if (s[i] == ' ' && s[i+1] != ' ' && s[i+1] != '\0' ) {
+            s[i] = '\0';
+            strcat(sr, s+i+1);
+            strcat(sr, " ");
+            //      printf("the s+i+1:%s", s+i+1);
+        }
+        if (s[i] == ' ') {
+            s[i] = '\0';
+        }
+    }
+    strcat(sr, p);
+    return sr;
+    
+}
+
 
 @end
