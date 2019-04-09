@@ -242,5 +242,35 @@ class LeetCode: XCTestCase {
         
     }
    
+    func testsimplifyPath() {
+        print(simplifyPath("/../"))
+    }
+    
+    func simplifyPath(_ path: String) -> String {
+        
+        let array = path.components(separatedBy: "/")
+        var stack = [String]()
+        
+        for str in array {
+            if str == "" || str == "." {
+                
+            } else if ".." == str {
+                stack.popLast()
+            } else {
+                stack.append(str)
+            }
+        }
+        
+        if stack.count == 0 {
+            return "/"
+        }
+        
+        let result = NSMutableString(string: "")
+        for str in stack {
+            result.appendFormat("/%@", str)
+        }
+        
+        return String(result)
+    }
     
 }

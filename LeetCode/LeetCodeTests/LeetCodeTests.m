@@ -290,7 +290,6 @@ char* multiply(char* num1, char* num2) {
             result[i + j + 1] = addMul % 10 + '0';
             
         }
-        
         result[i] += mulCarry + addCarry;
         
     }
@@ -451,6 +450,97 @@ char *reverseWords2(char *s) {
     return sr;
     
 }
+
+
+- (void)testisPalindrome {
+    isPalindrome2(1110);
+}
+
+bool isPalindrome(int x) {
+ 
+    if (x < 0) {
+        return false;
+    }
+    int y = x;
+    long rec = 0;
+    while (x != 0) {
+        int pop = x % 10;
+        x /= 10;
+        rec = rec * 10 + pop;
+    }
+    if (y == x) {
+        return true;
+    } else {
+        return false;
+    }
+    
+}
+
+bool isPalindrome2(int x) {
+    
+    if (x < 0 || (x % 10 == 0 && x != 0)) {
+        return false;
+    }
+    int rec = 0;
+    while (x > rec) {
+        rec = rec * 10 + x % 10;
+        x /= 10;
+    }
+    if (x == rec || x == rec / 10) {
+        return true;
+    }
+    return false;
+    
+}
+
+- (void)testromanToInt {
+    romanToInt("IXIVI");
+}
+
+int roman(char r) {
+    switch (r) {
+        case 'I':
+            return 1;
+            break;
+        case 'V':
+            return 5;
+            break;
+        case 'X':
+            return 10;
+            break;
+        case 'L':
+            return 50;
+            break;
+        case 'C':
+            return 100;
+            break;
+        case 'D':
+            return 500;
+            break;
+        case 'M':
+            return 1000;
+            break;
+    }
+    return 0;
+}
+int romanToInt(char* s) {
+ 
+    int len = (int)strlen(s);
+    
+    int result = roman(s[len - 1]);
+    for (int i = len - 2; i >= 0; i--) {
+        int l = roman(s[i]);
+        int r = roman(s[i + 1]);
+        if (l >= r) {
+            result += l;
+        } else {
+            result -= l;
+        }
+    }
+    return result;
+}
+
+
 
 
 @end

@@ -15,6 +15,7 @@
 		A20A458D224B1939005D9124 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A20A458C224B1939005D9124 /* main.m */; };
 		A20A4597224B1939005D9124 /* LeetCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A20A4596224B1939005D9124 /* LeetCodeTests.m */; };
 		A20A45D0224C5C49005D9124 /* LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A45CF224C5C49005D9124 /* LeetCode.swift */; };
+		A2223998225B8DD300AD38DA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2223997225B8DD300AD38DA /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		A20A4598224B1939005D9124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A20A45CE224C5C47005D9124 /* LeetCodeTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LeetCodeTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A20A45CF224C5C49005D9124 /* LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode.swift; sourceTree = "<group>"; };
+		A2223996225B8DD300AD38DA /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		A2223997225B8DD300AD38DA /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +91,8 @@
 				A20A457E224B1938005D9124 /* AppDelegate.m */,
 				A20A4580224B1938005D9124 /* ViewController.h */,
 				A20A4581224B1938005D9124 /* ViewController.m */,
+				A2223996225B8DD300AD38DA /* Person.h */,
+				A2223997225B8DD300AD38DA /* Person.m */,
 				A20A4583224B1938005D9124 /* Main.storyboard */,
 				A20A4586224B1939005D9124 /* Assets.xcassets */,
 				A20A4588224B1939005D9124 /* LaunchScreen.storyboard */,
@@ -211,6 +216,7 @@
 			files = (
 				A20A4582224B1938005D9124 /* ViewController.m in Sources */,
 				A20A458D224B1939005D9124 /* main.m in Sources */,
+				A2223998225B8DD300AD38DA /* Person.m in Sources */,
 				A20A457F224B1938005D9124 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
