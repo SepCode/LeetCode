@@ -541,6 +541,89 @@ int romanToInt(char* s) {
 }
 
 
+- (void)testrestoreIpAddresses {
+    int size = 0;
+    restoreIpAddresses("25525511135", &size);
+}
+/**
+ * Return an array of size *returnSize.
+ * Note: The returned array must be malloced, assume caller calls free().
+ */
+char** restoreIpAddresses(char* s, int* returnSize) {
+    char* *sArray = malloc(sizeof(char *));
+    char *result = malloc(sizeof(char *));
+    int count = 0;
+    addIpAddress(s, result, sArray, returnSize, &count);
+    return sArray;
+}
+void addIpAddress(char *s, char *result, char* *sArray, int *returnSize, int *count);
+void addIpAddress(char *s, char *result, char* *sArray, int *returnSize, int *count) {
+    long sLen = strlen(s);
+    if ((*count) > 4 - (sLen / 3.0)) {
+        (*count)--;
+        return;
+    }
+    char *temp = result;
+    (*count)++;
+    for (int i = 1; i <= 3 && i < sLen; i++) {
+        char *s1 = malloc(sizeof(char *));
+        strncpy(s1, s, i);
+        if (((s1[0] == '0' && strlen(s1) == 1) || s1[0] != '0') && atoi(s1) <= 255) {
+            strcat(strcat(temp, s1), ".");
+            if (i == sLen - 1) {
+                sArray[*returnSize] = temp;
+                (*returnSize)++;
+                
+            }
+            char *next = s + i;
+            addIpAddress(next, temp, sArray, returnSize, count);
+        }
+    }
+}
+
+- (void)testReserveStr {
+    NSLog(@"--%@", [self func:@"Antyum"]);
+}
+
+- (NSString *)func:(NSString *)str {
+    return str.length ? [NSString stringWithFormat:@"%@%@",[self func:[str substringFromIndex:1]],[str substringToIndex:1]] : @"";
+}
+
+- (void)testQuickSort {
+    int array[] = {1,5,8,3,6,9};
+    int r = sizeof(array) / sizeof(int);
+    NSLog(@"%s",quickSort(array, 0, r - 1));
+}
+
+int *quickSort(int *array, int l, int r) {
+    if (l < r) {
+        int left = l, right = r;
+        int pivot = array[right];
+        
+        while (left < right) {
+            while (array[left] <= pivot && left < right) {
+                left++;
+            }
+            if (left < right) {
+                array[right] = array[left];
+            }
+            while (array[right] >= pivot && left < right) {
+                right--;
+            }
+            if (left < right) {
+                array[left] = array[right];
+            }
+            
+        }
+        array[left] = pivot;
+        
+        quickSort(array, l, left - 1);
+        quickSort(array, left + 1, r);
+        
+    }
+    
+    return array;
+}
 
 
 @end

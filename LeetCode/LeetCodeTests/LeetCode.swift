@@ -273,4 +273,20 @@ class LeetCode: XCTestCase {
         return String(result)
     }
     
+    
+    func testrestoreIpAddresses() {
+        
+    }
+    
+    
+    func restoreIpAddresses(_ s: String) -> [String] {
+        var result = [String]()
+        
+        
+        
+        
+        
+        return result;
+    }
+    
 }

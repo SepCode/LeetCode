@@ -7,13 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Person.h"
+#import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        
-        __autoreleasing id obj = [Person alloc];
-        NSLog(@"%@",obj);
-
+         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }
