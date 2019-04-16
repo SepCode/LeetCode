@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#define MYMAX(x,y) ((x) > (y) ? (x) : (y))
 
 @interface LeetCodeTests : XCTestCase
 
@@ -20,6 +21,29 @@
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+}
+
+- (void)testdefine {
+    NSLog(@"--%d", MYMAX(10, 1));
+}
+
+- (void)testprint {
+    int a[5] = {1, 2, 3, 4, 5};
+    int *ptr = (int *)(&a);
+    printf("--%d, %d", *(a + 1), *ptr + 1);
+}
+
+- (void)teststackPrint {
+    int b = 10;
+    int c = 1;
+    int *d = &b;
+    int *e = &c;
+    int *a[2] = {d,e};
+    int **ptr = (int **)(&a + 1);
+    printf("--%d, %d", **(a + 1), **(ptr - 1));
+    printf("--%p, %p", &b, &c);
+    printf("--%p, %p", &a, d);
+    printf("--%d, %d", *(&c + 1), b);
 }
 
 - (void)testExample {
@@ -543,7 +567,11 @@ int romanToInt(char* s) {
 
 - (void)testrestoreIpAddresses {
     int size = 0;
-    restoreIpAddresses("25525511135", &size);
+
+    printf("%s",restoreIpAddresses("25525511135", &size)[0]);
+//    NSMutableArray *array = [NSMutableArray new];
+//    [self restoreIpAddress:@"25525511135" res:@"" array:array count:0];
+//    NSLog(@"%@", array);
 }
 /**
  * Return an array of size *returnSize.
@@ -551,33 +579,68 @@ int romanToInt(char* s) {
  */
 char** restoreIpAddresses(char* s, int* returnSize) {
     char* *sArray = malloc(sizeof(char *));
-    char *result = malloc(sizeof(char *));
-    int count = 0;
-    addIpAddress(s, result, sArray, returnSize, &count);
+    char *res = malloc(strlen(s) + 3);
+    res = "";
+    addIpAddress(s, res, sArray, returnSize, 0);
     return sArray;
 }
-void addIpAddress(char *s, char *result, char* *sArray, int *returnSize, int *count);
-void addIpAddress(char *s, char *result, char* *sArray, int *returnSize, int *count) {
-    long sLen = strlen(s);
-    if ((*count) > 4 - (sLen / 3.0)) {
-        (*count)--;
+
+- (void)restoreIpAddress:(NSString *)str res:(NSString *)res array:(NSMutableArray *)array count:(NSUInteger)count {
+    
+    if (str.length / 3.0 > 4 - count) {
         return;
     }
-    char *temp = result;
-    (*count)++;
+    
+    if (count == 4 && !str.length) {
+        [array addObject:res];
+        return;
+    }
+    
+    for (int i = 1; i < 4 && i <= str.length; i++) {
+        
+        NSString *sub = [str substringToIndex:i];
+        if (sub.integerValue > 255 || (sub.length > 1 && [sub characterAtIndex:0] == '0')) return;
+        
+        NSString *nextRes = [NSString stringWithFormat:@"%@%@%@",res,sub,(count == 3 ? @"" : @".")];
+        [self restoreIpAddress:[str substringFromIndex:i] res:nextRes array:array count:count + 1];
+        
+    }
+    
+    
+    
+}
+
+
+
+
+
+
+void addIpAddress(char *s, char *res, char* *sArray, int *returnSize, int count);
+void addIpAddress(char *s, char *res, char* *sArray, int *returnSize, int count) {
+    long sLen = strlen(s);
+    if (count > 4 - (sLen / 3.0)) {
+        return;
+    }
+    
+    if (count == 4 && sLen == 0) {
+        sArray[*returnSize] = res;
+        (*returnSize)++;
+        return;
+    }
+    
     for (int i = 1; i <= 3 && i < sLen; i++) {
-        char *s1 = malloc(sizeof(char *));
+        char *s1 = malloc(i);
         strncpy(s1, s, i);
         if (((s1[0] == '0' && strlen(s1) == 1) || s1[0] != '0') && atoi(s1) <= 255) {
-            strcat(strcat(temp, s1), ".");
-            if (i == sLen - 1) {
-                sArray[*returnSize] = temp;
-                (*returnSize)++;
-                
-            }
+            
             char *next = s + i;
-            addIpAddress(next, temp, sArray, returnSize, count);
+            char *nextRes = strncat(res, s1, i);
+            nextRes = strcat(nextRes, count == 3 ? "" : ".");
+            addIpAddress(next, nextRes, sArray, returnSize, count++);
+        } else {
+            return;
         }
+        
     }
 }
 

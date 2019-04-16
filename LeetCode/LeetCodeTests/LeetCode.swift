@@ -275,7 +275,7 @@ class LeetCode: XCTestCase {
     
     
     func testrestoreIpAddresses() {
-        
+        restoreIpAddresses("25525511135")
     }
     
     
