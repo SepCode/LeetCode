@@ -655,7 +655,11 @@ void addIpAddress(char *s, char *res, char* *sArray, int *returnSize, int count)
 - (void)testQuickSort {
     int array[] = {1,5,8,3,6,9};
     int r = sizeof(array) / sizeof(int);
-    NSLog(@"%s",quickSort(array, 0, r - 1));
+    quickSort(array, 0, r - 1);
+    for (int i = 0; i < r; i++) {
+        
+        NSLog(@"%d",array[i]);
+    }
 }
 
 int *quickSort(int *array, int l, int r) {
@@ -687,6 +691,63 @@ int *quickSort(int *array, int l, int r) {
     
     return array;
 }
+
+void mergeSort(int array[], int l, int mid, int r, int temp[]) {
+    int lStart = l, lEnd = mid, rStart = mid + 1, rEnd = r;
+    int tempCount = 0;
+    while (lStart <= lEnd && rStart <= rEnd) {
+        if (array[lStart] < array[rStart]) {
+            temp[tempCount++] = array[lStart++];
+        } else {
+            temp[tempCount++] = array[rStart++];
+        }
+    }
+    
+    while (lStart <= lEnd) {
+        temp[tempCount++] = array[lStart++];
+    }
+    
+    while (rStart <= rEnd) {
+        temp[tempCount++] = array[rStart++];
+    }
+    int i = 0;
+    while (i < tempCount) {
+        array[l + i] = temp[i];
+        i++;
+    }
+    
+}
+
+void merge(int array[], int l, int r, int temp[]) {
+    if (l >= r) {
+        return;
+    }
+    int mid = (l + r) / 2;
+    merge(array,l, mid, temp);
+    merge(array,mid + 1, r, temp);
+    if (array[mid] <= array[mid + 1]) {
+        return;
+    }
+    mergeSort(array, l, mid, r, temp);
+    
+}
+
+
+
+
+- (void)testMergeSort {
+    int array[] = {4,3,5,2,7,1,9,8,6};
+    int len = sizeof(array) / sizeof(int);
+    int *temp = malloc(len + 1);
+//    memset(temp, 0, len);
+    merge(array, 0, len -1, temp);
+    for (int i = 0; i < len; i++) {
+        
+        printf("%d",array[i]);
+    }
+    free(temp);
+}
+
 
 
 @end
