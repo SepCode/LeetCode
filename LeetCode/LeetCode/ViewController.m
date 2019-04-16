@@ -22,7 +22,7 @@ typedef struct {
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @property (nonatomic) CFRunLoopActivity activity;
 @property (nonatomic) NSUInteger timeCount;
-@property(nullable, nonatomic,copy) NSArray *title;
+@property (nullable, nonatomic,copy) NSArray *title;
 @end
 
 
@@ -32,6 +32,15 @@ typedef struct {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    NSLog(@"1");
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        NSLog(@"2");
+    });
+    NSLog(@"3");
+    
     
     self.obj = [Person new];
     self.obj.firstName = @"sep";
