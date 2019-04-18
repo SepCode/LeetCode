@@ -16,6 +16,15 @@
 		A20A4597224B1939005D9124 /* LeetCodeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A20A4596224B1939005D9124 /* LeetCodeTests.m */; };
 		A20A45D0224C5C49005D9124 /* LeetCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20A45CF224C5C49005D9124 /* LeetCode.swift */; };
 		A2223998225B8DD300AD38DA /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = A2223997225B8DD300AD38DA /* Person.m */; };
+		A22C7D142266E0A20025C964 /* Person+test2.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C7D132266E0A20025C964 /* Person+test2.m */; };
+		A22C7D172266E1E50025C964 /* Person+s1.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C7D162266E1E50025C964 /* Person+s1.m */; };
+		A22C7D1A2266E3820025C964 /* Person+test4.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C7D192266E3820025C964 /* Person+test4.m */; };
+		A22C7D1D2266E3B60025C964 /* Person+test3.m in Sources */ = {isa = PBXBuildFile; fileRef = A22C7D1C2266E3B60025C964 /* Person+test3.m */; };
+		A231A43A2266CDFD0031C677 /* Me.m in Sources */ = {isa = PBXBuildFile; fileRef = A231A4392266CDFD0031C677 /* Me.m */; };
+		A231A43D2266CFD80031C677 /* Person+test.m in Sources */ = {isa = PBXBuildFile; fileRef = A231A43C2266CFD80031C677 /* Person+test.m */; };
+		A25E84E62266E43300582DA2 /* Person+test5.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84E52266E43300582DA2 /* Person+test5.m */; };
+		A25E84E92266E54000582DA2 /* Person+test6.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84E82266E54000582DA2 /* Person+test6.m */; };
+		A25E84EC2266E6D700582DA2 /* Mee.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84EB2266E6D700582DA2 /* Mee.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +55,24 @@
 		A20A45CF224C5C49005D9124 /* LeetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeetCode.swift; sourceTree = "<group>"; };
 		A2223996225B8DD300AD38DA /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		A2223997225B8DD300AD38DA /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		A22C7D122266E0A20025C964 /* Person+test2.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test2.h"; sourceTree = "<group>"; };
+		A22C7D132266E0A20025C964 /* Person+test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test2.m"; sourceTree = "<group>"; };
+		A22C7D152266E1E50025C964 /* Person+s1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+s1.h"; sourceTree = "<group>"; };
+		A22C7D162266E1E50025C964 /* Person+s1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+s1.m"; sourceTree = "<group>"; };
+		A22C7D182266E3820025C964 /* Person+test4.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test4.h"; sourceTree = "<group>"; };
+		A22C7D192266E3820025C964 /* Person+test4.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test4.m"; sourceTree = "<group>"; };
+		A22C7D1B2266E3B60025C964 /* Person+test3.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test3.h"; sourceTree = "<group>"; };
+		A22C7D1C2266E3B60025C964 /* Person+test3.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test3.m"; sourceTree = "<group>"; };
+		A231A4382266CDFD0031C677 /* Me.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Me.h; sourceTree = "<group>"; };
+		A231A4392266CDFD0031C677 /* Me.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Me.m; sourceTree = "<group>"; };
+		A231A43B2266CFD80031C677 /* Person+test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test.h"; sourceTree = "<group>"; };
+		A231A43C2266CFD80031C677 /* Person+test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test.m"; sourceTree = "<group>"; };
+		A25E84E42266E43300582DA2 /* Person+test5.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test5.h"; sourceTree = "<group>"; };
+		A25E84E52266E43300582DA2 /* Person+test5.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test5.m"; sourceTree = "<group>"; };
+		A25E84E72266E54000582DA2 /* Person+test6.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Person+test6.h"; sourceTree = "<group>"; };
+		A25E84E82266E54000582DA2 /* Person+test6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test6.m"; sourceTree = "<group>"; };
+		A25E84EA2266E6D700582DA2 /* Mee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mee.h; sourceTree = "<group>"; };
+		A25E84EB2266E6D700582DA2 /* Mee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mee.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +120,24 @@
 				A20A4581224B1938005D9124 /* ViewController.m */,
 				A2223996225B8DD300AD38DA /* Person.h */,
 				A2223997225B8DD300AD38DA /* Person.m */,
+				A22C7D152266E1E50025C964 /* Person+s1.h */,
+				A22C7D162266E1E50025C964 /* Person+s1.m */,
+				A231A43B2266CFD80031C677 /* Person+test.h */,
+				A231A43C2266CFD80031C677 /* Person+test.m */,
+				A22C7D182266E3820025C964 /* Person+test4.h */,
+				A22C7D192266E3820025C964 /* Person+test4.m */,
+				A25E84E42266E43300582DA2 /* Person+test5.h */,
+				A25E84E52266E43300582DA2 /* Person+test5.m */,
+				A22C7D1B2266E3B60025C964 /* Person+test3.h */,
+				A22C7D1C2266E3B60025C964 /* Person+test3.m */,
+				A22C7D122266E0A20025C964 /* Person+test2.h */,
+				A22C7D132266E0A20025C964 /* Person+test2.m */,
+				A25E84E72266E54000582DA2 /* Person+test6.h */,
+				A25E84E82266E54000582DA2 /* Person+test6.m */,
+				A231A4382266CDFD0031C677 /* Me.h */,
+				A231A4392266CDFD0031C677 /* Me.m */,
+				A25E84EA2266E6D700582DA2 /* Mee.h */,
+				A25E84EB2266E6D700582DA2 /* Mee.m */,
 				A20A4583224B1938005D9124 /* Main.storyboard */,
 				A20A4586224B1939005D9124 /* Assets.xcassets */,
 				A20A4588224B1939005D9124 /* LaunchScreen.storyboard */,
@@ -214,9 +259,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A25E84E62266E43300582DA2 /* Person+test5.m in Sources */,
+				A25E84E92266E54000582DA2 /* Person+test6.m in Sources */,
+				A231A43D2266CFD80031C677 /* Person+test.m in Sources */,
 				A20A4582224B1938005D9124 /* ViewController.m in Sources */,
+				A25E84EC2266E6D700582DA2 /* Mee.m in Sources */,
 				A20A458D224B1939005D9124 /* main.m in Sources */,
+				A22C7D1A2266E3820025C964 /* Person+test4.m in Sources */,
+				A231A43A2266CDFD0031C677 /* Me.m in Sources */,
+				A22C7D172266E1E50025C964 /* Person+s1.m in Sources */,
+				A22C7D142266E0A20025C964 /* Person+test2.m in Sources */,
 				A2223998225B8DD300AD38DA /* Person.m in Sources */,
+				A22C7D1D2266E3B60025C964 /* Person+test3.m in Sources */,
 				A20A457F224B1938005D9124 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

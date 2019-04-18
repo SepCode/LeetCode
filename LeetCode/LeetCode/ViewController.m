@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import <objc/runtime.h>
 #import "Person.h"
+#import "Mee.h"
 
 typedef struct {
     int a, b, c;
@@ -21,7 +22,7 @@ typedef struct {
 @property (nonatomic, strong) Person *obj;
 @property (nonatomic, strong) dispatch_semaphore_t semaphore;
 @property (nonatomic) CFRunLoopActivity activity;
-@property (nonatomic) NSUInteger timeCount;
+@property (nonatomic, assign) NSUInteger timeCount;
 @property (nullable, nonatomic,copy) NSArray *title;
 @end
 
@@ -29,23 +30,38 @@ typedef struct {
 @implementation ViewController
 @synthesize timeCount = _timeCount;
 @synthesize title = _titleArray;
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
     
+    
     NSLog(@"1");
     dispatch_async(dispatch_get_main_queue(), ^{
-        
         NSLog(@"2");
     });
     NSLog(@"3");
+    [self testtest];
+    
+    NSArray *array = @[@(1),@(2)];
+    Person *me = [Person new];
+    __block NSArray *array2 = [NSArray array];
+    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        array2 = [array2 arrayByAddingObject:obj];
+        me.firstName = [NSString stringWithFormat:@"dajlfda"];
+    }];
     
     
-    self.obj = [Person new];
-    self.obj.firstName = @"sep";
-    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
-    self.obj.firstName = @"code";
+    [Mee class];
+    [Person class];
+//    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
+//    self.obj.firstName = @"code";
 //    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
 //    for (int i = 0; i < 100000; ++i) {
 //        dispatch_async(queue, ^{
@@ -76,6 +92,10 @@ typedef struct {
 //    NSLog(@"%d", test.a);
 //
 //}
+
+- (void)testtest {
+    NSLog(@"4");
+}
 
 - (NSUInteger)timeCount {
     return _timeCount;
