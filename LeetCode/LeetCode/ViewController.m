@@ -42,26 +42,26 @@ typedef struct {
     
     
     
-    NSLog(@"1");
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"2");
-    });
-    NSLog(@"3");
-    [self testtest];
-    
-    NSArray *array = @[@(1),@(2)];
-    Person *me = [Person new];
-    __block NSArray *array2 = [NSArray array];
-    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        array2 = [array2 arrayByAddingObject:obj];
-        me.firstName = [NSString stringWithFormat:@"dajlfda"];
-    }];
-    
-    
-    [Mee class];
-    [Person class];
-//    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
-//    self.obj.firstName = @"code";
+//    NSLog(@"1");
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSLog(@"2");
+//    });
+//    NSLog(@"3");
+//    [self testtest];
+//
+//    NSArray *array = @[@(1),@(2)];
+//    Person *me = [Person new];
+//    __block NSArray *array2 = [NSArray array];
+//    [array enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        array2 = [array2 arrayByAddingObject:obj];
+//        me.firstName = [NSString stringWithFormat:@"dajlfda"];
+//    }];
+//
+//
+//    [Mee class];
+//    [Person class];
+    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
+    self.obj.firstName = @"code";
 //    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
 //    for (int i = 0; i < 100000; ++i) {
 //        dispatch_async(queue, ^{
@@ -79,9 +79,9 @@ typedef struct {
 //    [self performSelector:@selector(testMoreObj:) withObject:array];
 
 
-    NSLog(@"%@",NSStringFromClass(self.superclass));
-    self.timeCount = 10.0;
-    [self registerObserver];
+//    NSLog(@"%@",NSStringFromClass(self.superclass));
+//    self.timeCount = 10.0;
+//    [self registerObserver];
 }
 //- (void)testMoreObj:(NSArray *)array {
 //    NSValue *value = array[2];
