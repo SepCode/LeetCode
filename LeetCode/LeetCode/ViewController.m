@@ -10,6 +10,8 @@
 #import <objc/runtime.h>
 #import "Person.h"
 #import "Mee.h"
+#import "MyView.h"
+#import "MyscrollView.h"
 
 typedef struct {
     int a, b, c;
@@ -24,8 +26,14 @@ typedef struct {
 @property (nonatomic) CFRunLoopActivity activity;
 @property (nonatomic, assign) NSUInteger timeCount;
 @property (nullable, nonatomic,copy) NSArray *title;
+
+@property (nonatomic, assign) void (^block)(void);
+@property (nonatomic, strong) UIView *myview;
 @end
 
+void (^block2)(void) = ^{
+    printf("%d",1);
+};
 
 @implementation ViewController
 @synthesize timeCount = _timeCount;
@@ -36,10 +44,30 @@ typedef struct {
     
 
 }
+
+- (void)viewWillLayoutSubviews {
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    MyscrollView *scroll = [[MyscrollView alloc] initWithFrame:CGRectMake(0, 0, 1000, 400)];
+    scroll.contentSize = CGSizeMake(1000, 2000);
+    self.myview = [[MyView alloc] init];
+    [scroll addSubview:self.myview];
+    [self.view addSubview:scroll];
     
+    self.myview.backgroundColor = [UIColor redColor];
+    
+    
+    
+//    int a = 10;
+//
+//    self.block = ^{
+//        printf("%d",a);
+//    };
+//
+//    NSLog(@"%@",self.block);
     
     
 //    NSLog(@"1");
@@ -60,8 +88,8 @@ typedef struct {
 //
 //    [Mee class];
 //    [Person class];
-    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
-    self.obj.firstName = @"code";
+//    [self addObserver:self forKeyPath:@"obj.firstName" options:NSKeyValueObservingOptionNew context:nil];
+//    self.obj.firstName = @"code";
 //    dispatch_queue_t queue = dispatch_queue_create("test", DISPATCH_QUEUE_CONCURRENT);
 //    for (int i = 0; i < 100000; ++i) {
 //        dispatch_async(queue, ^{
@@ -105,7 +133,9 @@ typedef struct {
     _timeCount = timeCount;
 }
 
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    self.myview.frame = CGRectMake(1000, 0, 10, 100);
+}
 
     
 - (void)registerObserver

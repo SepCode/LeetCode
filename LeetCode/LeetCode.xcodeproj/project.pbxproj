@@ -25,6 +25,8 @@
 		A25E84E62266E43300582DA2 /* Person+test5.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84E52266E43300582DA2 /* Person+test5.m */; };
 		A25E84E92266E54000582DA2 /* Person+test6.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84E82266E54000582DA2 /* Person+test6.m */; };
 		A25E84EC2266E6D700582DA2 /* Mee.m in Sources */ = {isa = PBXBuildFile; fileRef = A25E84EB2266E6D700582DA2 /* Mee.m */; };
+		A2EB1B87226F04E70036D9D2 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EB1B86226F04E70036D9D2 /* MyView.m */; };
+		A2EB1B8A226F0B890036D9D2 /* MyscrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EB1B89226F0B890036D9D2 /* MyscrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,10 @@
 		A25E84E82266E54000582DA2 /* Person+test6.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Person+test6.m"; sourceTree = "<group>"; };
 		A25E84EA2266E6D700582DA2 /* Mee.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mee.h; sourceTree = "<group>"; };
 		A25E84EB2266E6D700582DA2 /* Mee.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mee.m; sourceTree = "<group>"; };
+		A2EB1B85226F04E70036D9D2 /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		A2EB1B86226F04E70036D9D2 /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		A2EB1B88226F0B890036D9D2 /* MyscrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyscrollView.h; sourceTree = "<group>"; };
+		A2EB1B89226F0B890036D9D2 /* MyscrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyscrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +124,10 @@
 				A20A457E224B1938005D9124 /* AppDelegate.m */,
 				A20A4580224B1938005D9124 /* ViewController.h */,
 				A20A4581224B1938005D9124 /* ViewController.m */,
+				A2EB1B85226F04E70036D9D2 /* MyView.h */,
+				A2EB1B86226F04E70036D9D2 /* MyView.m */,
+				A2EB1B88226F0B890036D9D2 /* MyscrollView.h */,
+				A2EB1B89226F0B890036D9D2 /* MyscrollView.m */,
 				A2223996225B8DD300AD38DA /* Person.h */,
 				A2223997225B8DD300AD38DA /* Person.m */,
 				A22C7D152266E1E50025C964 /* Person+s1.h */,
@@ -261,10 +271,12 @@
 			files = (
 				A25E84E62266E43300582DA2 /* Person+test5.m in Sources */,
 				A25E84E92266E54000582DA2 /* Person+test6.m in Sources */,
+				A2EB1B8A226F0B890036D9D2 /* MyscrollView.m in Sources */,
 				A231A43D2266CFD80031C677 /* Person+test.m in Sources */,
 				A20A4582224B1938005D9124 /* ViewController.m in Sources */,
 				A25E84EC2266E6D700582DA2 /* Mee.m in Sources */,
 				A20A458D224B1939005D9124 /* main.m in Sources */,
+				A2EB1B87226F04E70036D9D2 /* MyView.m in Sources */,
 				A22C7D1A2266E3820025C964 /* Person+test4.m in Sources */,
 				A231A43A2266CDFD0031C677 /* Me.m in Sources */,
 				A22C7D172266E1E50025C964 /* Person+s1.m in Sources */,
