@@ -59,7 +59,13 @@ void (^block2)(void) = ^{
     
     self.myview.backgroundColor = [UIColor redColor];
     
+    Person *p1 = [[Person alloc] init];
+    Person *p2 = [p1 copy];
+    NSLog(@"%@,%@",p1,p2);
     
+    NSArray *p3 = [[NSArray alloc] init];
+    NSArray *p4 = [p3 copy];
+    NSLog(@"%@,%@",p3,p4);
     
 //    int a = 10;
 //

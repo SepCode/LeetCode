@@ -24,4 +24,10 @@
 + (void)initialize {
     NSLog(@"---");
 }
+- (nonnull id)copyWithZone:(nullable NSZone *)zone {
+    Person *copy = [[self.class allocWithZone:zone] init];
+    copy.firstName = self.firstName;
+    return copy;
+}
+
 @end
