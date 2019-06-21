@@ -23,12 +23,12 @@ int main(int argc, char * argv[]) {
 //    NSLog(@"%@",d);
 //    NSLog(@"%@",c);
     
-    __autoreleasing NSObject *obj = [[NSObject alloc] init];
-    NSLog(@"%@", obj);
-    NSObject *obj2 = obj;
-    NSLog(@"--%@",obj2);
+//    __autoreleasing NSObject *obj = [[NSObject alloc] init];
+//    NSLog(@"%@", obj);
+//    NSObject *obj2 = obj;
+//    NSLog(@"--%@",obj2);
 
-//    @autoreleasepool {
+    @autoreleasepool {
 ////        CFRunLoopObserverRef observer = CFRunLoopObserverCreateWithHandler(kCFAllocatorDefault, kCFRunLoopAllActivities, YES, 0, ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {
 ////
 ////            /*
@@ -65,6 +65,6 @@ int main(int argc, char * argv[]) {
 ////        });
 ////
 ////        CFRunLoopAddObserver(CFRunLoopGetCurrent(), observer, kCFRunLoopDefaultMode);
-//         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-//    }
+         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+    }
 }
