@@ -10,11 +10,8 @@ public class _141_环形链表 {
         head.next = next1;
         next1.next = next2;
         next2.next = next3;
-        // next3.next = next1;
-//        next3.next = next2;
-
-        _141_环形链表 cyc1 = new _141_环形链表(); 
-        cyc1.hasCycle(head);
+        next3.next = next1;
+        
         final _141_环形链表 cyc = new _141_环形链表();
         System.out.println(cyc.hasCycle(head));
     }
