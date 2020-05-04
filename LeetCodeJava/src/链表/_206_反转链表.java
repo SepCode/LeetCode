@@ -1,5 +1,7 @@
 package 链表;
 
+import java.util.Arrays;
+
 public class _206_反转链表 {
     // 递归
     // public ListNode reverseList(final ListNode head) {
@@ -36,13 +38,7 @@ public class _206_反转链表 {
 
     public static void main(final String[] args) {
         
-        ListNode head = new ListNode(4);
-        final ListNode next1 = new ListNode(1);
-        final ListNode next2 = new ListNode(5);
-        final ListNode next3 = new ListNode(9);
-        head.next = next1;
-        next1.next = next2;
-        next2.next = next3;
+        ListNode head = new ListNode(Arrays.asList(4,1,5,9));
 
         ListNode head1 = head;
         while (head1 != null) {
