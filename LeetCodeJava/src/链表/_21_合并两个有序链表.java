@@ -5,6 +5,9 @@ public class _21_合并两个有序链表 {
 	
 	
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+		if (l1 == null) return l2;
+		if (l2 == null) return l1;
+		
         ListNode dummy = new ListNode(0);
         ListNode tail = dummy;
         
@@ -18,7 +21,7 @@ public class _21_合并两个有序链表 {
 			}
 			tail = tail.next;
 		}
-        tail.next = (l1 != null) ? l1 : ((l2 != null) ? l2 : null); 
+        tail.next = (l1 == null) ? l2 : l1; 
         
         return dummy.next;
     }
