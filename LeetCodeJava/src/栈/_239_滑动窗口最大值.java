@@ -1,7 +1,5 @@
 package 栈;
 
-import java.util.LinkedList;
-
 public class _239_滑动窗口最大值 {
     public int[] maxSlidingWindow(int[] nums, int k) {
 //    	输入: nums = [1,3,-1,-3,5,3,6,7], 和 k = 3

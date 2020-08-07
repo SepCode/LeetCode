@@ -1,7 +1,5 @@
 package 栈;
 
-import java.util.Stack;
-
 public class _739_每日温度 {
     public int[] dailyTemperatures(int[] T) {
     	
