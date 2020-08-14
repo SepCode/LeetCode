@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 import java.util.Arrays;
 
 public class _876_链表的中间结点 {

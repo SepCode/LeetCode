@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _160_相交链表 {
 	public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         

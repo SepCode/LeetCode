@@ -1,16 +1,16 @@
-package 链表;
+package Common;
 import java.util.List;
 
 // Definition for singly-linked list.
-class ListNode {
-    int val;
-    ListNode next;
-    ListNode(final int x) {
+public class ListNode {
+    public int val;
+    public ListNode next;
+    public ListNode(final int x) {
         val = x;
         next = null;
     }
 
-    ListNode(List<Integer> array) {
+    public ListNode(List<Integer> array) {
         if (array.size() <= 0) {
             return;
         }

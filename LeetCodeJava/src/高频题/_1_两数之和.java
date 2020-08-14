@@ -1,4 +1,4 @@
-package 链表;
+package 高频题;
 
 import java.util.HashMap;
 

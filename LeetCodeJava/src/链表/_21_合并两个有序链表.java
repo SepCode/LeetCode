@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _21_合并两个有序链表 {
 	
 	

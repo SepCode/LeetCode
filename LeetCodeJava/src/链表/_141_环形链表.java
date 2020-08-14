@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _141_环形链表 {
 
     public boolean hasCycle(final ListNode head) {

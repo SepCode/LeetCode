@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _86_分隔链表 {
 	public ListNode partition(ListNode head, int x) {
 //		输入: head = 1->4->3->2->5->2, x = 3

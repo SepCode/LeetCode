@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _23_合并K个排序链表 {
     public ListNode mergeKLists(ListNode[] lists) {
 //    	输入:

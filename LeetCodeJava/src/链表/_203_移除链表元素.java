@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _203_移除链表元素 {
 	public ListNode removeElements(ListNode head, int val) {
 

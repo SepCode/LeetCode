@@ -1,5 +1,7 @@
 package 链表;
 
+import Common.ListNode;
+
 public class _234_回文链表 {
 	public boolean isPalindrome(ListNode head) {
 //		输入: 1->2->3->2->1->null
