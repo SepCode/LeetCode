@@ -17,16 +17,20 @@ public class _4_寻找两个正序数组的中位数 {
         if (i >= num1.length) return num2[j + mid - 1];
         if (j >= num2.length) return num1[i + mid - 1];
 
-        // 3
+        // 3 二分查找mid最小为1
+        if (mid == 1) return Math.min(num1[i], num2[j]);
 
+        // 4 查找mid/2
+        int halfMid = mid >> 1;
+        int v1 = i + halfMid <= num1.length ? num1[i + halfMid - 1] : Integer.MAX_VALUE;
+        int v2 = j + halfMid <= num2.length ? num2[j + halfMid - 1] : Integer.MAX_VALUE;
 
-
-
-
-
-
-
-
+        // 5 递归查找
+        if (v1 < v2) {
+            return findM(num1, num2, i + halfMid, j, mid - halfMid);
+        } else {
+            return findM(num1, num2, i, j + halfMid, mid - halfMid);
+        }
 
     }
 
