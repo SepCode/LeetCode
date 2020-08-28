@@ -2,7 +2,7 @@ package 动态规划;
 
 public class _5_最长回文子串 {
 
-
+//  扩展中心法
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 2) return s;
 
