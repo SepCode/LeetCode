@@ -11,6 +11,12 @@ public class _121_买卖股票的最佳时机 {
         // 转换为最大子串和
         // dp[i] = profit[i] + dp[i - 1]
 
+        // 穷举状态
+        // dp[i][k][0 or 1]
+        // i 天 k 交易完成（买卖）次数 0 未持有 1 持有
+        // dp[i][k][0] = max(dp[i - 1][k][0], dp[i - 1][k][1] + prices[i]);
+        // dp[i][k][1] = max(dp[i - 1][k][1], dp[i - 1][k - 1][0] - prices[i]);
+
         if (prices == null || prices.length <= 1) return 0;
         int[] nums = new int[prices.length - 1];
         int sum = 0, dp = 0;
