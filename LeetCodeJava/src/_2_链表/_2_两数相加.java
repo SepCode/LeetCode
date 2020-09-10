@@ -1,4 +1,4 @@
-package _1_排序_数组;
+package _2_链表;
 
 import Common.ListNode;
 
