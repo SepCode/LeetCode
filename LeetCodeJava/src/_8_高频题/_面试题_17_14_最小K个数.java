@@ -27,7 +27,7 @@ public class _面试题_17_14_最小K个数 {
         while (l < r) {
             while (l < r && p <= arr[r]) r--;
             arr[l] = arr[r];
-            while (l < r && p > arr[l]) l++;
+            while (l < r && p >= arr[l]) l++;
             arr[r] = arr[l];
         }
         arr[l] = p;
@@ -35,7 +35,7 @@ public class _面试题_17_14_最小K个数 {
         if (l == k) {
             return;
         } else if (l > k) {
-            partition(arr, left, l, k);
+            partition(arr, left, l - 1, k);
         } else {
             partition(arr, l + 1, right, k);
         }

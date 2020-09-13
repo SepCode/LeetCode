@@ -12,6 +12,7 @@ public class _283_移动零 {
     }
 
     private void swap(int[] nums, int cur, int i) {
+        if (cur == i) return;
         int tmp = nums[cur];
         nums[cur] = nums[i];
         nums[i] = tmp;

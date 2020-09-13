@@ -16,7 +16,7 @@ public class _83_删除排序链表中的重复元素 {
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(Arrays.asList(1,1,2,3,3));
+        ListNode head = new ListNode(Arrays.asList(1,1,1,2,3,3));
         new _83_删除排序链表中的重复元素().deleteDuplicates(head).printListNode();
     }
 }

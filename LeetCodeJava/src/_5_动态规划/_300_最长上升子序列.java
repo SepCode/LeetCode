@@ -11,7 +11,7 @@ public class _300_最长上升子序列 {
         //    输出: 4
         //    解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
 //
-//        T(n) = O(n^2)
+//        T(n) = O(nlogn)
         if (nums.length <= 1) return nums.length;
 
         int[] heap = new int[nums.length];
@@ -42,7 +42,7 @@ public class _300_最长上升子序列 {
         //    输出: 4
         //    解释: 最长的上升子序列是 [2,3,7,101]，它的长度是 4。
 //
-//        T(n) = O(n^2)
+//        T(n) = O(nlogn)
         if (nums.length <= 1) return nums.length;
 
         int[] heap = new int[nums.length];
