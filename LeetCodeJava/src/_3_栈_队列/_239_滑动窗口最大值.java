@@ -24,24 +24,22 @@ public class _239_滑动窗口最大值 {
 			    	  [1,1] [2,3]
 			    	  -----------------------
     	  */
-
+		if (k == 0 || nums.length == 0) return new int[0];
 		// 双端队列
     	LinkedList<Integer> queue = new LinkedList<>();
     	int[] maxs = new int[nums.length - k + 1];
 
-    	for (int r = 0; r < nums.length; r++) {
-			int l = r - k + 1;
-
-			if (queue.isEmpty()) {
-				queue.addLast(r);
-			} else if (queue.getFirst() < l) {
-				queue.removeFirst();
-			}
+    	for (int l = 1 - k, r = 0; r < nums.length; l++, r++) {
 
 			while (!queue.isEmpty() && nums[r] >= nums[queue.getLast()]) {
 				queue.removeLast();
 			}
 			queue.addLast(r);
+
+			if (queue.getFirst() < l) {
+				queue.removeFirst();
+			}
+
 			if (l >= 0) {
 				maxs[l] = nums[queue.getFirst()];
 			}
